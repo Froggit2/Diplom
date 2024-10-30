@@ -584,44 +584,52 @@ Diplom
 |  |  |  migrations 
 
 |  |  |  |  __init__.py 
+
 |  |  |   __init__.py 
+
 |  |  |  admin.py 
+
 |  |  |  apps.py 
+
 |  |  |  models.py 
+
 |  |  |  tests.py 
+
 |  |  |  views.py 
+
 |  |  templates 
+
 |  |  |  Hello_1.html 
+
 |  |  |  Hello_2.html 
+
 |  |  __init__.py 
+
 |  |  db.sqlite3 
+
 |  |  manage.py 
-
+----
 |  FastAPI 
+
 |  |  templates 
+
 |  |  |  Hello_1.html 
+
 |  |  |  Hello_2.html 
+
 |  |  FastAPI.py 
-
+----
 |  Flask 
+
 |  |  templates 
+
 |  |  |  Hello_1.html 
+
 |  |  |  Hello_2.html 
+
 |  |  Flask.py 
-
  
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
+----
 
 # **Приложение 2. Список необходимых библиотек**
 
