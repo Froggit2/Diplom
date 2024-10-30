@@ -565,8 +565,8 @@ Flask будет отличным фреймворком для тех же но
 
 Diplom 
 
-|  Django 
-|  |  Django 
+|--Django 
+|--|--Django 
 |  |  |  __init__.py 
 |  |  |  asgi.py 
 |  |  |  settings.py 
