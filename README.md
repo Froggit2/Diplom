@@ -608,6 +608,7 @@ Diplom
 |  |  db.sqlite3 
 
 |  |  manage.py 
+
 ----
 |  FastAPI 
 
@@ -618,6 +619,7 @@ Diplom
 |  |  |  Hello_2.html 
 
 |  |  FastAPI.py 
+
 ----
 |  Flask 
 
@@ -630,7 +632,6 @@ Diplom
 |  |  Flask.py 
  
 ----
-
 # **Приложение 2. Список необходимых библиотек**
 
 Django==4.2.16 
