@@ -643,3 +643,5 @@ uvicorn==0.32.0
 Flask==3.0.3 
 
 alembic==1.13.1
+
+SQLAlchemy==2.0.36
