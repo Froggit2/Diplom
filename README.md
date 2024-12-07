@@ -237,67 +237,106 @@ Django также имеет множество расширений и библ
 
 Для того чтобы начать работу на Flask нужно установить его с помощью консольной команды “pip install Flask”. После этого достаточно просто создать новый файл с расширением “.py”.(рис. 1.1) 
 
-![image](https://github.com/user-attachments/assets/ce6ca649-a7f7-47de-9163-1e7d40f286c6)
+![image](https://github.com/user-attachments/assets/dbe36f5e-881b-4af8-831c-57c32aed95f6)
 
 (рис. 1.1) 
 
-Потом обязательно нужно импортировать все нужные модули. Во-первых, сам Flask, а во-вторых, для сайта понадобиться render_template, так же для создания и использования базы данных понадобиться sqlite3 (рис. 1_2).  
+Потом обязательно нужно импортировать все нужные модули. Во-первых, сам Flask, а во-вторых, для сайта понадобиться render_template, так же понадобятся модели из файла models_Flask.py (рис. 1.2).  
 
-![image](https://github.com/user-attachments/assets/f026edc3-9c4e-4c0a-b726-57ecb39a8742)
+![image](https://github.com/user-attachments/assets/9c0aec47-2987-451f-9898-eec38876d837)
 
 (рис. 1.2) 
 
-Перед началом создадим БД она же база данных. Что бы её создать мы прописываем куда будет подключаться БД conect и прописываем cursor это два важных инструмента для создания БД.
+Перед началом создадим несколько моделий в models_Flask. Что бы их создать понадобится sqlalchemy и несколько файлов из него (рис. 1.3).
 
-![image](https://github.com/user-attachments/assets/85ff0d82-4dc1-4c7c-aa21-e70b1974c988)
+![image](https://github.com/user-attachments/assets/9fcb2f54-3af5-4f74-94a3-a64ea440054d)
 
 (рис. 1.3) 
+Прописываем всё самое необходимое для модулей и запускаем систему что бы создать базу данных.
 
-Теперь создаём БД под названием Test и несколько объектов с текстовым содержанием "Привет 1" "Привет 2" "Привет 3". Так же выбираем их потом сохраняем изменения и закрываем БД.
+![image](https://github.com/user-attachments/assets/262d94eb-a862-412f-88ac-12a5e6da3cf9)
 
-![image](https://github.com/user-attachments/assets/d1fa2b6f-3334-4eb5-867d-0525d60434a2)
+(рис 1.4.1) 
 
-(рис 1.4) 
+![image](https://github.com/user-attachments/assets/90fee1af-cf5d-42ff-a1f4-ad27d93f5605)
 
-Теперь можно создать несколько функций. Первая функция является примером того как работают CRUD запросы в Flask.
+(рис. 1.4.2)
 
-![image](https://github.com/user-attachments/assets/3f899ae3-6b96-40cc-8091-2b0a0fb5ae71)
+Теперь можно создать несколько функций. Эти функции являются примером того как работают CRUD запросы в Flask (рис. 1.5).
 
-(рис.1.5)
+![image](https://github.com/user-attachments/assets/195be264-03f5-4a7f-a4f5-d1e96a219ce8)
 
-Так же “.route” это наше подключение на страницу, указанную в скобках. В “.route”  указываем путь “(/test_1/<text>)” и “(/test_2)”, если что путь можно указывать какой душе угодно. Дальше идёт переменная text, которая содержит строку, а после функция возвращает render_template в котором указаны шаблоны “test_1” и “test_2” с расширением “.html”, которые находятся в директории templates. 
+(рис.1.5.1)
+
+![image](https://github.com/user-attachments/assets/e06a6791-6e50-4753-925d-009ef4401cdb)
+
+(рис. 1.5.2)
+
+![image](https://github.com/user-attachments/assets/1bb78601-d582-49ac-a4db-8f8c2f373415)
+
+(рис. 1.5.3)
+
+![image](https://github.com/user-attachments/assets/eec89fbb-c453-420a-a7f6-b6cece3b5b6c)
+
+(рис. 1.5.4)
+
+![image](https://github.com/user-attachments/assets/3e348393-a3bb-4b89-a57e-5675cb425166)
+
+(рис. 1.5.5)
+
+Так же “.route” это наше подключение на страницу, указанную в скобках. В “.route”  указываем какой угодно путь. Дальше прописываем основную логику функции и возвращаем всё с помощью render_template.
 
 ## **Пример работы на FastAPI** 
 
 Перед началом работы с FastAPI нужно его установить многого для этого не надо, так как запуск FastAPI схож с Flask. Сначала также устанавливаем FastAPI “pip install fastapi” и создаём директорию с файлом(рис. 2.1). 
 
-![image](https://github.com/user-attachments/assets/8220806f-dded-47b5-a548-f17601bdfcf0)
+![image](https://github.com/user-attachments/assets/76fd7a4e-9b28-44c0-a72e-feace390c0ef)
 
 (рис. 2.1) 
 
-Теперь также, как и во Flask импортируем из fastapi класс FastAPI и Request, а по пути fastapi.templating импортируем Jinja2Templates. Так же стоит импортировать sqlite3 для работы с БД(рис. 2.2). 
+Теперь также, как и во Flask импортируем из fastapi класс FastAPI и Request, а по пути fastapi.templating импортируем Jinja2Templates, и из файла models_FastAPI импортируем модели (рис. 2.2). 
 
-![image](https://github.com/user-attachments/assets/9d89517e-2b1a-4141-be2c-f6e67618fc93)
+![image](https://github.com/user-attachments/assets/22426f98-7645-473d-b7aa-0cd78fb78e40)
 
 (рис. 2.2) 
 
-Дальше прописываем БД и создаём несколько объектов.(рис. 2.3). 
+Теперь переходя к моделям прописывем им все импорты.(рис. 2.3). 
 
-![image](https://github.com/user-attachments/assets/73c89b4c-5eec-43b9-8d01-2196c062b004)
+![image](https://github.com/user-attachments/assets/d3cb8445-9af9-4892-b5fb-3011d2a657d6)
 
-(рис. 2.3) 
+Добавляем движок, сесию и стандартный Base(рис. 2.4) 
 
-Теперь создаём две переменные с названием app и templates. Переменная app будет содержать в себе класс FastAPI, а templates будет содержать Jinja2Templates с указанным путём в папку с шаблонами (рис. 2.4). 
+![image](https://github.com/user-attachments/assets/06ec6348-52c3-4340-a908-efbc51602b28)
 
-![image](https://github.com/user-attachments/assets/235ed904-f4a0-4bdd-90f4-80f207e3d5b4)
+(рис. 2.4). 
 
-(рис. 2.4) 
+Теперь прописывем модели с помощью sqlalchemy(рис. 2.5).
 
-А сейчас можно непосредственно переходить к самим функциям (рис. 2.5).
+![image](https://github.com/user-attachments/assets/689ce4a6-f68a-4a0c-9fd7-73739d9acdc2)
 
-![image](https://github.com/user-attachments/assets/154625ba-3ce7-4dbf-8d8d-e9e08c605f4a)
+(рис. 2.5)
 
-(рис. 2.5) 
+Теперь нужно прописать основные функции сайта с помощью FastAPI(рис. 2.6).
+
+![image](https://github.com/user-attachments/assets/01742813-7b5d-4359-a0f2-78feba4f959d)
+
+(рис. 2.6.1)
+
+![image](https://github.com/user-attachments/assets/1a58ed30-4ad0-452d-b720-3c4112169b80)
+
+(рис. 2.6.2)
+
+![image](https://github.com/user-attachments/assets/9881a034-d369-4176-949a-0821994db181)
+
+(рис. 2.6.3)
+
+![image](https://github.com/user-attachments/assets/7fdeff60-33b9-41e2-9721-c69a132e4c4f)
+
+(рис. 2.6.4)
+
+![image](https://github.com/user-attachments/assets/90f6fbab-b065-43fc-8176-5aa1fde84bc4)
+
+(рис. 2.6.5)
 
 Как уже можно заметить вместо app.route() как во Flask стоит app.get(). В FastAPI .get() является одним из семи запросов. На самом деле в FastAPI кроме .get() есть ещё .put(), .post(), .patch(), .head(), .options() и .delete() запросы и весь ваш сайт будет работать через них, если вы делайте это в FastAPI.
 
@@ -318,79 +357,80 @@ Django также имеет множество расширений и библ
 
 ## **Пример работы на Django** 
 
-Для начала нужно установить Django, делается это так же, как и в предыдущих примерах просто в консоли нужно прописать “pip install Django”. В отличии от FastAPI и Flask, в Django чтобы начать разработку проекта, в консоли нужно прописать “django-admin startproject {имя файла}” (рис. 3.1) и (рис. 3.2). 
+Для начала нужно установить Django, делается это так же, как и в предыдущих примерах просто в консоли нужно прописать “pip install Django”. В отличии от FastAPI и Flask, в Django чтобы начать разработку проекта, в консоли нужно прописать “django-admin startproject {имя файла}” и тогда появится папка с несколькими файлами(рис. 3.1). 
 
-![image](https://github.com/user-attachments/assets/9d6fb3d4-8167-4b52-80b9-1b91f36ee1a0)
+![image](https://github.com/user-attachments/assets/1530beae-00e3-450f-9cc7-b61f8878db67)
 
-(рис. 3.1) 
+(рис. 3.1)
 
-![image](https://github.com/user-attachments/assets/4615c060-e707-423d-b582-83d0430a8436)
+Все файлы затрагивать не будем, а пробежимся только по тем, которые помогут создать сайт. Но перед тем, как создать его нужно создать приложение в директории Django. С помощью команды cd {имя директории} переходим в папку Django и прописываем команду в консоли ”python manage.py startapp {имя директории}” (рис. 3.3). 
 
-(рис. 3.2) 
+![image](https://github.com/user-attachments/assets/ab9d75df-4ade-4cf6-8596-2a20dfeea530)
 
-Все файлы затрагивать не будем, а пробежимся только по тем которые помогут создать сайт. Но перед тем, как создать его нужно создать приложение в директории Django. С помощью команды cd {имя директории} переходим в папку Django и прописываем команду в консоли ”python manage.py startapp {имя директории}” (рис. 3.3). 
+(рис. 3.3)
 
-![image](https://github.com/user-attachments/assets/f32c67fd-ae7a-404a-803a-a281c8f84803)
-
-(рис. 3.3) 
-
-В приложении также не будем пробегаться по всем файлам, а пройдёмся только по основному. И в основном нам понадобятся файл views.py и models.py в приложении, а так же файлы urls.py и settings.py, в проекте Django. 
+В приложении также не будем пробегаться по всем файлам, а пройдёмся только по основному. И в основном понадобятся файлы views.py и models.py в приложении, а файлы urls.py и settings.py, в проекте Django. 
 Для начала разберёмся с settings.py, а конкретнее в нём нам надо прописать наше приложение в лист INSTALLED_APPS (рис3.4). 
 
-![image](https://github.com/user-attachments/assets/05c107a0-58a9-424d-ad3b-baf48fb6d281)
+![image](https://github.com/user-attachments/assets/94cbf30d-31c8-456a-90c3-f14df7ee13b3)
 
 (рис. 3.4) 
 
 Теперь в TEMPLATES, а конкретнее в листе “DIRS” нужно прописать вашу папку с шаблонами с помощью BASE_DIR (рис. 3.5). 
 
-![image](https://github.com/user-attachments/assets/9bd066e2-a566-48c2-bbba-1c8c3a7f49eb)
+![image](https://github.com/user-attachments/assets/c6aab4aa-0a45-4dc9-a6b1-0a85e0d99874)
 
 (рис. 3.5) 
 
 Теперь файл settings.py нам больше не понадобиться. Но стоит учесть, что при прописи вашей папки с шаблонами нужно ставить её на уровень вашего приложения, а также указывать полный путь по директориям если они там есть, например: “[BASE_DIR / ‘templates/task’]”.
+После настройки проекта можно переходить к функциям, но перед этим стоит создать модели в файле models.py, и делается это очень легко.
 
-После настройки проекта можно переходить к функциям, но перед этим стоит создать модель в файле models.py, и делается это очень легко.
-
-![image](https://github.com/user-attachments/assets/99a0e4cd-e2be-4cf8-9f08-f03f22a5a693)
+![image](https://github.com/user-attachments/assets/17e500a7-0a7e-4fa1-a08d-6c5e6c1231d9)
 
 (рис 3.6)
 
-Все функции создаются в файле views.py. В этом файле уже есть импортированный render, но стоит ещё импортировать HttpResponse и из файла models.py нужно импортировать модель. Теперь просто прописываем функции не забывая возвращать render. В первой функции hello_1 в качестве переменной передаётся request и благодоря GET запросу нам возвращается "Привет 1", а во второй функции с помощью специального запроса возвращаются все объкты принадлежащей модели Test(рис. 3.7). 
+Все функции создаются в файле views.py. В этом файле уже есть импортированный render, но стоит ещё импортировать redict, а из .contrib.auth понадобятся authenticate, login и logout, из файла .contrib.auth.forms понадобится UserCreationForm и из файла models.py нужно импортировать модели(рис. 3.7).
 
-![image](https://github.com/user-attachments/assets/6d78e9b8-720e-4a61-acbb-4bddbf068122)
+![image](https://github.com/user-attachments/assets/db9eb4d5-5b3d-4de3-bf2b-4681e925d237)
 
 (рис. 3.7)
 
-Теперь переходим в папку urls.py в ней нам нужно прописать все пути, которые мы хотим сделать с помощью path. В кавычках прописываем сам путь, а через запятую функцию. Саму функцию следует импортировать из views.py наши функции (рис. 3.8). 
+Теперь прописываем логику функций(рис. 3.8).
 
-![image](https://github.com/user-attachments/assets/d709da7c-dce4-4251-af9b-19145aa24109)
+![image](https://github.com/user-attachments/assets/fcff627d-a623-4174-8d89-b86e6e897126)
 
-(рис. 3.8) 
+(рис. 3.8.1)
 
-И наконец, чтобы запустить проект осталось прописать в консоли команду “python manage.py runserver”(рис. 3.9).
+![image](https://github.com/user-attachments/assets/7fff8cb4-f3ea-45c8-80ea-0475bd537277)
 
-![image](https://github.com/user-attachments/assets/45ce53fc-5a32-464b-bd48-ed79d6e58343)
+(рис. 3.8.2)
 
-(рис. 3.9)
+![image](https://github.com/user-attachments/assets/a26485b1-78dd-4181-9f79-b99f18371177)
+
+(рис. 3.8.3)
+
+Теперь переходим в папку urls.py в ней нам нужно прописать все пути, которые мы хотим сделать с помощью path. В кавычках прописываем сам путь, а через запятую функцию. Саму функцию следует импортировать из views.py наши функции (рис. 3.9). 
+
+![image](https://github.com/user-attachments/assets/bf7ab548-ecee-48b6-b02d-0f3bf29ca88f)
+
+(рис. 3.9) 
+
+И наконец, чтобы запустить проект осталось прописать в консоли команду “python manage.py runserver”.
 
 
 ## **Шаблоны HTML** 
 
 ### **FastAPI и Flask**
-В первом шаблоне “test_1.html” кроме всего основного передаётся один аргумент этим аргументом является text который содержит в себе строку “Привет 1” ну, а ниже стоит ссылка по которой можно перейти на сайт со вторым шаблоном
-Во втором шаблоне под названием “test_2.html” передаются переменные text_1 и text_2. Переменная text_1 содержит в себе строку “Привет 2”, а в text_2 строка “Привет 3”, и так же прикрепленна ссылка на шаблон test_1.html(рис. 4.1) и (рис. 4.2).
+Шаблоны FastAPI и Flask полностью одинаковы в них используются команды for и передача основной конструкции шаблона на другие.
 
-![image](https://github.com/user-attachments/assets/b72df0d1-4c14-47af-98cf-d348e703eaf1)
 
 (рис. 4.1)
 
-![image](https://github.com/user-attachments/assets/26de2464-9732-456a-85bc-96b18da2d481)
 
 (рис. 4.2)
 
 Ни один из фреймворков кроме Django не ограничивает вас в использовании или изменении шаблонов HTML. Каждый созданный вами шаблон можно использовать полностью без ограничений, но стоит учесть, что Django ограничивает логическую обработку в HTML-шаблонах. Ниже можно увидеть, как выглядят сами сайты.(рис. 4.2). 
 
-![image](https://github.com/user-attachments/assets/5dfd2cc9-ac6f-40ac-9018-8480cba64e61)
 
 (рис. 4.3)
 
